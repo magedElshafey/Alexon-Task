@@ -1,0 +1,46 @@
+.mainContainer {
+    width: 180px;
+    height: 125px;
+    background-color: #FBFBFB;
+    border: 1px solid #8C8C8C;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+.imgContainer {
+   width: 32px;
+   height: 32px;
+   padding: 10px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 1px solid #E2E2E2;
+   border-radius: 4px;
+   -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+   -ms-border-radius: 4px;
+   -o-border-radius: 4px;
+}
+.complainImg {
+    width: 16px;
+    height: 18px;
+    object-fit: cover;
+}
+.title {
+    font-size: 18px;
+width: 120px;
+font-weight: 400;
+color: rgba(0, 0, 0, 0.87);
+}
+.active {
+    background-color: var(--mainColor);
+    color: white !important;
+}
+.filter {
+    filter: brightness(0) invert(1);
+}

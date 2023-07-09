@@ -1,24 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useEffect } from "react";
+import Aos from "aos";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
+import Home from "./pages/Home";
+import Navbar from "./components/layout/navbar/Navbar";
+import Complain from "./pages/Complain";
+import { complainsType } from "./fakers/data";
 function App() {
+  let lang = localStorage.getItem("lang")
+    ? JSON.parse(localStorage.getItem("lang"))
+    : "ar";
+  // handle animation effect
+  useEffect(() => {
+    Aos.init({
+      offset: 0,
+      duration: 1200,
+    });
+  }, []);
+  // handle scroll to top
+  function ScrollToTopAfterChangePage() {
+    const { pathname } = useLocation();
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+    return null;
+  }
+  // handle change direction when the language change
+  useEffect(() => {
+    document.documentElement.setAttribute("lang", lang);
+    if (lang === "ar") {
+      document.getElementsByTagName("body")[0].style.direction = "rtl";
+    } else {
+      document.getElementsByTagName("body")[0].style.direction = "ltr";
+    }
+  }, [lang]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <ScrollToTopAfterChangePage />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home data={complainsType} />} />
+      </Routes>
+      <Routes>
+        <Route
+          path="/complain/:id"
+          element={<Complain data={complainsType} />}
+        />
+      </Routes>
+    </Router>
   );
 }
 

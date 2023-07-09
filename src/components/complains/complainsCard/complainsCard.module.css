@@ -1,0 +1,23 @@
+.mainContainer {
+    width: 300px;
+    padding: 22px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 14px;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    -ms-border-radius: 14px;
+    -o-border-radius: 14px;
+}
+.title {
+    font-weight: 500;
+    font-size: 24px;
+}
+.num {
+    font-weight: 700;
+    font-size: 32px;
+}

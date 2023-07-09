@@ -1,0 +1,25 @@
+.title {
+    font-size: 26px;
+    color: rgba(0, 0, 0, 0.87);
+    font-weight: 500;
+}
+.label {
+    font-size: 20px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.47);
+}
+.select {
+    width: 239px;
+    padding: 7px;
+    border: none;
+    height: 42px;
+    background-color: #E7FFF3;
+    border-radius: 4px ;
+    -webkit-border-radius: 4px ;
+    -moz-border-radius: 4px ;
+    -ms-border-radius: 4px ;
+    -o-border-radius: 4px ;
+}
+.select:focus {
+    outline: none;
+}
